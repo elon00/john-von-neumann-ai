@@ -1,0 +1,53 @@
+{
+  "mcpServers": {
+    "john-von-neumann-ai": {
+      "command": "cargo",
+      "args": [
+        "run",
+        "--release",
+        "--quiet"
+      ],
+      "env": {
+        "RUST_LOG": "info",
+        "TITAN_PROTOCOL": "VONNEUMANN",
+        "FIPS_203_LEVEL": "ML-KEM-768",
+        "FIPS_204_LEVEL": "ML-DSA-65"
+      },
+      "tools": [
+        {
+          "name": "solve_minimax_zero_sum_matrix",
+          "description": "Calculates mixed-strategy Nash equilibria in n-player zero-sum strategic payoff matrices",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "payoff_matrix": {
+                "type": "array"
+              }
+            },
+            "required": [
+              "payoff_matrix"
+            ]
+          }
+        },
+        {
+          "name": "simulate_self_replicating_automaton",
+          "description": "Executes 29-state von Neumann universal constructor cellular automata reproduction cycles",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "grid_size": {
+                "type": "integer"
+              },
+              "cycles": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "cycles"
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
